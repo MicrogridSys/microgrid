@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.microgrid.mapper.DevicesMapper">
+
+    <resultMap type="Devices" id="DevicesResult">
+        <result property="id" column="id"/>
+        <result property="deviceNo" column="device_no"/>
+        <result property="deviceStatus" column="device_status"/>
+        <result property="location" column="location"/>
+        <result property="installationDate" column="installation_date"/>
+    </resultMap>
+
+    <sql id="selectDevicesVo">
+        select id, device_no, device_status, location, installation_date
+        from devices
+    </sql>
+
+    <select id="selectDevicesList" parameterType="Devices" resultMap="DevicesResult">
+        <include refid="selectDevicesVo"/>
+        <where>
+            <if test="deviceNo != null  and deviceNo != ''">and device_no = #{deviceNo}</if>
+            <if test="deviceStatus != null ">and device_status = #{deviceStatus}</if>
+            <if test="location != null  and location != ''">and location = #{location}</if>
+            <if test="installationDate != null ">and installation_date = #{installationDate}</if>
+        </where>
+    </select>
+
+    <select id="getDeviceList" parameterType="String" resultMap="DevicesResult">
+        <include refid="selectDevicesVo"/>
+        WHERE device_no LIKE #{deviceNo}
+    </select>
+
+    <select id="selectDevicesById" parameterType="Long" resultMap="DevicesResult">
+        <include refid="selectDevicesVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertDevices" parameterType="Devices" useGeneratedKeys="true" keyProperty="id">
+        insert into devices
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="deviceNo != null">device_no,</if>
+            <if test="deviceStatus != null">device_status,</if>
+            <if test="location != null">location,</if>
+            <if test="installationDate != null">installation_date,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="deviceNo != null">#{deviceNo},</if>
+            <if test="deviceStatus != null">#{deviceStatus},</if>
+            <if test="location != null">#{location},</if>
+            <if test="installationDate != null">#{installationDate},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDevices" parameterType="Devices">
+        update devices
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="deviceNo != null">device_no = #{deviceNo},</if>
+            <if test="deviceStatus != null">device_status = #{deviceStatus},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="installationDate != null">installation_date = #{installationDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDevicesById" parameterType="Long">
+        delete
+        from devices
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteDevicesByIds" parameterType="String">
+        delete from devices where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

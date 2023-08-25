@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.microgrid.mapper.MainGridMapper">
+    
+    <resultMap type="MainGrid" id="MainGridResult">
+        <result property="id"    column="id"    />
+        <result property="terminalNo"    column="terminal_no"    />
+        <result property="timestamp"    column="timestamp"    />
+        <result property="mgCurrent"    column="mg_current"    />
+        <result property="mgVoltage"    column="mg_voltage"    />
+        <result property="mgPower"    column="mg_power"    />
+    </resultMap>
+
+    <sql id="selectMainGridVo">
+        select id, terminal_no, timestamp, mg_current, mg_voltage, mg_power from grid_main
+    </sql>
+
+    <!--新增发电机数据-->
+    <insert id="insertMainGrid" parameterType="MainGrid">
+        insert into grid_main (terminal_no, timestamp, mg_current, mg_voltage, mg_power)
+        VALUES (#{terminalNo}, #{timestamp}, #{mgCurrent}, #{mgVoltage}, #{mgPower});
+    </insert>
+
+    <!--获取最近更新的数据集合-->
+    <select id="getRecentMainGridData" parameterType="Date" resultMap="MainGridResult">
+        <include refid="selectMainGridVo"/>
+        WHERE timestamp > #{timestamp}
+    </select>
+
+    <select id="getMainGridData" resultMap="MainGridResult">
+        <include refid="selectMainGridVo"/>
+    </select>
+
+    <select id="getMainGridDataByType" parameterType="String" resultMap="MainGridResult">
+        <include refid="selectMainGridVo"/>
+        WHERE terminal_no LIKE #{terminalNo}
+    </select>
+</mapper>

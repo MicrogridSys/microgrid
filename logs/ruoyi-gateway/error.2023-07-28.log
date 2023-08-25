@@ -1,0 +1,15 @@
+12:17:58.502 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+12:21:22.236 [reactor-http-nio-2] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/system/user/getInfo
