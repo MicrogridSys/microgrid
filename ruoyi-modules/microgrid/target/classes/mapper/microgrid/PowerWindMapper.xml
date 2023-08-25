@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.microgrid.mapper.PowerWindMapper">
+    
+    <resultMap type="PowerWind" id="PowerWindResult">
+        <result property="id"    column="id"    />
+        <result property="terminalNo"    column="terminal_no"    />
+        <result property="timestamp"    column="timestamp"    />
+        <result property="windCurrent"    column="wind_current"    />
+        <result property="windVoltage"    column="wind_voltage"    />
+        <result property="windPower"    column="wind_power"    />
+    </resultMap>
+
+    <sql id="selectPowerWindVo">
+        select id, terminal_no, timestamp, wind_current, wind_voltage, wind_power from power_wind
+    </sql>
+
+    <insert id="insertPowerWind" parameterType="PowerWind">
+        insert into power_wind (terminal_no, timestamp, wind_current, wind_voltage, wind_power)
+        VALUES (#{terminalNo}, #{timestamp}, #{windCurrent}, #{windVoltage}, #{windPower});
+    </insert>
+
+    <!--获取最近更新段的光伏发电数据集合-->
+    <select id="getRecentPowerWindData" parameterType="Date" resultMap="PowerWindResult">
+        <include refid="selectPowerWindVo"/>
+        WHERE timestamp > #{timestamp}
+    </select>
+
+    <!--获取总发电量的数据-->
+    <select id="getTotalPowerWindData" resultType="BigDecimal">
+        SELECT SUM(wind_power) FROM power_wind
+    </select>
+
+    <select id="getWindData" resultMap="PowerWindResult">
+        <include refid="selectPowerWindVo"/>
+    </select>
+    <select id="getWindDataByType" parameterType="String" resultMap="PowerWindResult">
+        <include refid="selectPowerWindVo"/>
+        WHERE terminal_no LIKE #{terminalNo}
+    </select>
+</mapper>

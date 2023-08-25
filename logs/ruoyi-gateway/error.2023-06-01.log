@@ -1,0 +1,9 @@
+13:09:13.906 [reactor-http-nio-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/devices/list,异常信息:Connection prematurely closed BEFORE response
+16:31:16.975 [reactor-http-nio-2] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /10.37.7.61:9201
+16:31:26.975 [reactor-http-nio-4] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:Connection timed out: no further information: /10.37.7.61:9200
+16:31:35.176 [reactor-http-nio-5] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /10.37.7.61:9201
+16:31:45.457 [reactor-http-nio-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:Connection timed out: no further information: /10.37.7.61:9200
+16:31:46.320 [reactor-http-nio-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:Software caused connection abort: no further information: /10.37.7.61:9200
+16:31:46.320 [reactor-http-nio-8] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Software caused connection abort: no further information: /10.37.7.61:9201
+19:59:50.998 [reactor-http-nio-4] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:Connection timed out: no further information: /10.37.7.61:9201
+20:00:00.351 [reactor-http-nio-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:Connection timed out: no further information: /10.37.7.61:9200

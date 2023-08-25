@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.microgrid.mapper.TerminalsMapper">
+    
+    <resultMap type="Terminals" id="TerminalsResult">
+        <result property="id"    column="id"    />
+        <result property="terminalNo"    column="terminal_no"    />
+        <result property="deviceNo"    column="device_no"    />
+        <result property="terminalStatus"    column="terminal_status"    />
+        <result property="location"    column="location"    />
+        <result property="installationDate"    column="installation_date"    />
+    </resultMap>
+
+    <sql id="selectTerminalsVo">
+        select id, terminal_no, device_no, terminal_status, location, installation_date from terminals
+    </sql>
+
+    <select id="selectTerminalsList" parameterType="Terminals" resultMap="TerminalsResult">
+        <include refid="selectTerminalsVo"/>
+        <where>  
+            <if test="terminalNo != null  and terminalNo != ''"> and terminal_no = #{terminalNo}</if>
+            <if test="deviceNo != null  and deviceNo != ''"> and device_no = #{deviceNo}</if>
+            <if test="terminalStatus != null "> and terminal_status = #{terminalStatus}</if>
+            <if test="location != null  and location != ''"> and location = #{location}</if>
+            <if test="installationDate != null "> and installation_date = #{installationDate}</if>
+        </where>
+    </select>
+
+    <select id="getTerminalList" parameterType="String" resultMap="TerminalsResult">
+        <include refid="selectTerminalsVo"/>
+        WHERE terminal_no LIKE #{terminalNo}
+    </select>
+    
+    <select id="selectTerminalsById" parameterType="Long" resultMap="TerminalsResult">
+        <include refid="selectTerminalsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTerminals" parameterType="Terminals">
+        insert into terminals
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="terminalNo != null">terminal_no,</if>
+            <if test="deviceNo != null">device_no,</if>
+            <if test="terminalStatus != null">terminal_status,</if>
+            <if test="location != null">location,</if>
+            <if test="installationDate != null">installation_date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="terminalNo != null">#{terminalNo},</if>
+            <if test="deviceNo != null">#{deviceNo},</if>
+            <if test="terminalStatus != null">#{terminalStatus},</if>
+            <if test="location != null">#{location},</if>
+            <if test="installationDate != null">#{installationDate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTerminals" parameterType="Terminals">
+        update terminals
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="terminalNo != null">terminal_no = #{terminalNo},</if>
+            <if test="deviceNo != null">device_no = #{deviceNo},</if>
+            <if test="terminalStatus != null">terminal_status = #{terminalStatus},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="installationDate != null">installation_date = #{installationDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTerminalsById" parameterType="Long">
+        delete from terminals where id = #{id}
+    </delete>
+
+    <delete id="deleteTerminalsByIds" parameterType="String">
+        delete from terminals where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

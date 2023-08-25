@@ -1,0 +1,7 @@
+17:52:05.948 [reactor-http-nio-8] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powergens
+17:52:06.139 [reactor-http-nio-9] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powerpvs
+17:52:06.888 [reactor-http-nio-10] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powerwinds
+17:52:09.475 [reactor-http-nio-12] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powerpvs
+17:52:09.475 [reactor-http-nio-11] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powergens
+17:52:09.477 [reactor-http-nio-13] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/microgrid/data/powerwinds
+18:05:23.570 [reactor-http-nio-4] ERROR c.r.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/system/user/getInfo

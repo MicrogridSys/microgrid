@@ -1,0 +1,24 @@
+22:09:52.966 [boundedElastic-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:09:52.966 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:09:52.966 [boundedElastic-9] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:09:57.122 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:09:57.122 [boundedElastic-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:09:57.122 [boundedElastic-9] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:02.604 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:02.905 [boundedElastic-9] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:02.905 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:07.904 [boundedElastic-9] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:07.904 [boundedElastic-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:07.904 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:12.603 [boundedElastic-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:12.910 [boundedElastic-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+22:10:12.910 [boundedElastic-10] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+23:27:03.575 [reactor-http-nio-4] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:03.575 [reactor-http-nio-3] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:03.575 [reactor-http-nio-2] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:08.251 [reactor-http-nio-5] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:08.564 [reactor-http-nio-6] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:08.587 [reactor-http-nio-7] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:Connection refused: no further information: /10.37.7.61:8024
+23:27:11.537 [boundedElastic-25] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerwinds,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+23:27:11.537 [boundedElastic-24] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powerpvs,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"
+23:27:11.537 [boundedElastic-19] ERROR c.r.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/microgrid/data/powergens,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for microgrid"

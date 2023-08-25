@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.microgrid.mapper.LoadsMapper">
+    
+    <resultMap type="Loads" id="LoadsResult">
+        <result property="id"    column="id"    />
+        <result property="timestamp"    column="timestamp"    />
+        <result property="loadsPower"    column="loads_power"    />
+    </resultMap>
+
+    <sql id="selectLoadsVo">
+        select id, timestamp, loads_power from loads
+    </sql>
+
+    <!--新增发电机数据-->
+    <insert id="insertLoads" parameterType="Loads">
+        insert into loads (timestamp, loads_power)
+        VALUES (#{timestamp}, #{loadsPower});
+    </insert>
+
+    <!--获取最近更新的数据集合-->
+    <select id="getRecentLoadsData" parameterType="Date" resultMap="LoadsResult">
+        <include refid="selectLoadsVo"/>
+        WHERE timestamp > #{timestamp}
+    </select>
+
+    <select id="getLoadsData" resultMap="LoadsResult">
+        <include refid="selectLoadsVo"/>
+    </select>
+</mapper>
